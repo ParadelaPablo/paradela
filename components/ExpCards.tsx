@@ -10,7 +10,23 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { MoveRight } from "lucide-react";
 
-const jobPositions = [
+type JobLink = {
+  label: string;
+  url: string;
+};
+
+type JobPosition = {
+  timeline: string;
+  currentPosition: string;
+  place: string;
+  previousPositions: string[];
+  description: string;
+  skills: string[];
+  links: JobLink[];
+  featured: boolean;
+};
+
+const jobPositions: JobPosition[] = [
   {
     timeline: "Nov 2025 — Present",
     currentPosition: "Fullstack Developer • Beatly",
