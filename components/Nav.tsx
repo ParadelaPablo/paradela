@@ -14,14 +14,16 @@ export default function Nav() {
   const activeSection = useActiveSection([
     "about",
     "experience",
-    "projects",
+    "professional-work",
+    "dabidao",
     "contact",
   ]);
 
   const navItems: NavItem[] = [
     { name: "About", href: "#about" },
     { name: "Experience", href: "#experience" },
-    { name: "Projects", href: "#projects" },
+    { name: "Professional Work", href: "#professional-work" },
+    { name: "DABIDAO", href: "#dabidao" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -43,8 +45,8 @@ export default function Nav() {
   };
 
   return (
-    <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24 flex flex-col lg:gap-4">
-      <div className="flex flex-col gap-4 lg:pr-24 mt-6 lg:mt-0">
+    <header className="flex flex-col lg:sticky lg:top-0 lg:w-[35%] lg:max-w-[460px] lg:max-h-screen lg:flex-col lg:justify-between lg:gap-4 lg:py-24">
+      <div className="mt-6 flex flex-col gap-4 lg:mt-0 lg:pr-10">
       <div className="w-full flex items-center justify-center lg:justify-start">
       <Avatar className="w-24 lg:w-36 h-24 lg:h-36 border-primary">
   <AvatarImage 

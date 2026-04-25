@@ -11,14 +11,17 @@ export default function Contact() {
         </h2>
       </div>
       <div className="flex flex-col gap-4 lg:px-6 mb-8">
-        <h2 className="lg:block hidden text-5xl font-bold lg:text-start">
-          Get In Touch
+        <p className="text-xs uppercase tracking-[0.14em] text-muted-foreground">
+          GET IN TOUCH
+        </p>
+        <h2 className="text-5xl font-bold text-foreground lg:text-start">
+          Let&apos;s Talk
         </h2>
         <p className="lg:text-lg lg:text-start text-muted-foreground">
           Interested in working together or discussing a frontend/fullstack role? Send me a message and I&#39;ll get back to you.
         </p>
       </div>
-      <div className="flex flex-col justify-center items-center gap-4 lg:px-6 mb-4">
+      <div className="mb-4 flex w-full flex-col gap-4 lg:px-6">
         <ContactForm />
       </div>
     </section>

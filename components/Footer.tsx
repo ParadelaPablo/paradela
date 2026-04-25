@@ -5,9 +5,6 @@ export default function Footer() {
     <section>
       <div className="flex flex-col gap-4 lg:px-6 mt-16">
         <p className="text-sm text-start text-muted-foreground">
-          <a className="text-foreground" href="https://code.visualstudio.com/">
-            Visual Studio Code.
-          </a>{" "}
           Built with{" "}
           <a className="text-foreground" href="https://nextjs.org/">
             Next.js
@@ -15,12 +12,12 @@ export default function Footer() {
           ,{" "}
           <a className="text-foreground" href="https://tailwindcss.com/">
             Tailwind CSS
-          </a>{" "}
-          and{" "}
+          </a>
+          ,{" "}
           <a className="text-foreground" href="https://ui.shadcn.com/">
             Shadcn/ui
-          </a>
-          , deployed with{" "}
+          </a>{" "}
+          and AI-assisted workflow. Deployed with{" "}
           <a className="text-foreground" href="https://vercel.com/">
             Vercel
           </a>

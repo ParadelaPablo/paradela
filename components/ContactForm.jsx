@@ -31,7 +31,7 @@ return (
 <form
     ref={form}
     onSubmit={sendEmail}
-    className="flex flex-col gap-6 lg:w-1/2 mx-auto"
+    className="flex w-full max-w-xl flex-col gap-6"
 >
     <div>
     <label htmlFor="name" className="block text-sm font-medium mb-2">
@@ -74,7 +74,7 @@ return (
     </div>
     <button
     type="submit"
-    className="inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground px-4 py-2 text-sm font-medium shadow-sm hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+    className="inline-flex w-full items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
     >
     Send Message
     </button>

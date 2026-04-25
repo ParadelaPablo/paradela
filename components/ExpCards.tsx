@@ -21,6 +21,7 @@ type JobPosition = {
   place: string;
   previousPositions: string[];
   description: string;
+  impactBullets: string[];
   skills: string[];
   links: JobLink[];
   featured: boolean;
@@ -35,7 +36,12 @@ const jobPositions: JobPosition[] = [
       "Frontend, UX/UI, AI Automation & Product Systems",
     ],
     description:
-      "Building and improving production internal platforms for campaign operations, creator workflows and business automation. Owned major frontend areas of BO2 using React + TypeScript, while contributing to UX design, Figma implementation, AI-assisted workflow initiatives, and cross-product improvements across BO2, Discovery and Omni.",
+      "Built and improved internal platforms for campaign operations, creator workflows and business automation. Owned major BO2 frontend areas using React + TypeScript, while contributing to UX design, AI automation initiatives and cross-product improvements across BO2, Discovery and Omni.",
+    impactBullets: [
+      "Improved clarity and consistency across high-impact BO2 product areas.",
+      "Reduced operational friction through stronger UX patterns and flow design.",
+      "Enabled faster cross-product iteration across BO2, Discovery, and Omni.",
+    ],
     skills: [
       "React",
       "TypeScript",
@@ -58,6 +64,7 @@ const jobPositions: JobPosition[] = [
     previousPositions: [],
     description:
       "Completed an intensive full stack program focused on Java, Spring Boot, PostgreSQL, REST APIs, and modern frontend delivery with React and TypeScript.",
+    impactBullets: [],
     skills: [
       "Java",
       "Spring Boot",
@@ -80,37 +87,53 @@ export default function ExpCard() {
           Professional Experience
         </h2>
       </div>
+      <div className="mb-5 lg:px-6">
+        <p className="text-xs uppercase tracking-[0.14em] text-muted-foreground">
+          Selected Product Experience
+        </p>
+      </div>
       <>
         {jobPositions.map((job, index) => (
           <Card
             key={index}
-            className={`lg:p-6 mb-4 flex flex-col lg:flex-row w-full min-h-fit gap-0 lg:gap-5 border-transparent hover:border dark:lg:hover:border-t-blue-900 dark:lg:hover:bg-slate-800/50 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg lg:hover:bg-slate-100/50 lg:hover:border-t-blue-200 ${
+            className={`mb-4 flex w-full min-h-fit flex-col gap-3 border-transparent lg:grid lg:grid-cols-[180px_minmax(0,1fr)] lg:items-start lg:gap-x-6 lg:gap-y-0 lg:p-6 hover:border dark:lg:hover:border-t-blue-900 dark:lg:hover:bg-slate-800/50 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg lg:hover:bg-slate-100/50 lg:hover:border-t-blue-200 ${
               job.featured
                 ? "border border-primary/20 bg-primary/5 dark:bg-primary/10"
                 : ""
             }`}
           >
-            <CardHeader className="h-full w-full p-0">
+            <CardHeader className="w-full p-0">
               <CardTitle className="text-base text-slate-400 whitespace-nowrap">
                 {job.timeline}
               </CardTitle>
             </CardHeader>
-            <CardContent className="flex flex-col p-0">
-              <p className="text-foreground font-bold">
-                {job.place
-                  ? `${job.currentPosition} • ${job.place}`
-                  : job.currentPosition}
-              </p>
-              {job.previousPositions
-                .filter(Boolean)
-                .map((position, index) => (
-                <p key={index} className="text-slate-400 text-sm font-bold">
-                  {position}
+            <CardContent className="flex flex-col gap-3 p-0">
+              <div className="flex flex-col gap-1">
+                <p className="text-foreground font-bold">
+                  {job.place
+                    ? `${job.currentPosition} • ${job.place}`
+                    : job.currentPosition}
                 </p>
-                ))}
-              <CardDescription className="py-3 text-muted-foreground">
+                <p
+                  className={`min-h-5 text-sm font-bold text-slate-400 ${
+                    job.previousPositions.filter(Boolean).length === 0
+                      ? "opacity-0"
+                      : ""
+                  }`}
+                >
+                  {job.previousPositions.filter(Boolean).join(" • ") || " "}
+                </p>
+              </div>
+              <CardDescription className="text-muted-foreground">
                 {job.description}
               </CardDescription>
+              {job.impactBullets.length > 0 && (
+                <ul className="ml-5 list-disc space-y-1 text-sm text-muted-foreground">
+                  {job.impactBullets.map((bullet, index) => (
+                    <li key={index}>{bullet}</li>
+                  ))}
+                </ul>
+              )}
               <CardFooter className="p-0 flex flex-wrap gap-2">
                 {job.skills.map((skill, index) => (
                   <Badge key={index}>{skill}</Badge>
