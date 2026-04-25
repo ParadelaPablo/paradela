@@ -96,7 +96,7 @@ export default function ExpCard() {
         {jobPositions.map((job, index) => (
           <Card
             key={index}
-            className={`mb-4 flex w-full min-h-fit flex-col gap-3 border-transparent lg:grid lg:grid-cols-[180px_minmax(0,1fr)] lg:items-start lg:gap-x-6 lg:gap-y-0 lg:p-6 hover:border dark:lg:hover:border-t-blue-900 dark:lg:hover:bg-slate-800/50 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg lg:hover:bg-slate-100/50 lg:hover:border-t-blue-200 ${
+            className={`mb-4 flex w-full min-h-fit flex-col gap-3 border-transparent p-5 sm:p-6 lg:grid lg:grid-cols-[180px_minmax(0,1fr)] lg:items-start lg:gap-x-6 lg:gap-y-0 hover:border dark:lg:hover:border-t-blue-900 dark:lg:hover:bg-slate-800/50 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg lg:hover:bg-slate-100/50 lg:hover:border-t-blue-200 ${
               job.featured
                 ? "border border-primary/20 bg-primary/5 dark:bg-primary/10"
                 : ""

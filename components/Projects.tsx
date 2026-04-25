@@ -136,7 +136,7 @@ export default function Projects() {
         {productWorkCards.map((project, index) => (
           <Card
             key={index}
-            className={`group lg:p-6 mb-5 flex flex-col w-full min-h-fit gap-3 border-transparent hover:border dark:lg:hover:border-t-blue-900 dark:lg:hover:bg-slate-800/50 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg lg:hover:bg-slate-100/50 lg:hover:border-t-blue-200 ${
+            className={`group mb-5 flex w-full min-h-fit flex-col gap-3 border-transparent p-5 sm:p-6 hover:border dark:lg:hover:border-t-blue-900 dark:lg:hover:bg-slate-800/50 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg lg:hover:bg-slate-100/50 lg:hover:border-t-blue-200 ${
               project.featured
                 ? "border border-primary/20 bg-primary/5 dark:bg-primary/10"
                 : ""

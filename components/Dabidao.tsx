@@ -46,7 +46,7 @@ export default function Dabidao() {
           digital products.
         </p>
       </div>
-      <Card className="group mb-5 flex w-full min-h-fit flex-col gap-3 border border-primary/20 bg-primary/5 dark:bg-primary/10 lg:p-6 hover:border dark:lg:hover:border-t-blue-900 dark:lg:hover:bg-slate-800/50 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg lg:hover:bg-slate-100/50 lg:hover:border-t-blue-200">
+      <Card className="group mb-5 flex w-full min-h-fit flex-col gap-3 border border-primary/20 bg-primary/5 p-5 dark:bg-primary/10 sm:p-6 hover:border dark:lg:hover:border-t-blue-900 dark:lg:hover:bg-slate-800/50 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg lg:hover:bg-slate-100/50 lg:hover:border-t-blue-200">
         <CardHeader className="p-0">
           <CardTitle className="text-primary font-bold text-lg leading-tight">
             Dabidao
