@@ -11,65 +11,68 @@ import { Badge } from "@/components/ui/badge";
 import { MoveRight } from "lucide-react";
 
 const jobPositions = [
-
+  {
+    timeline: "Nov 2025 — Present",
+    currentPosition: "Fullstack Developer • Beatly",
+    place: "",
+    previousPositions: [
+      "Frontend, UX/UI, AI Automation & Product Systems",
+    ],
+    description:
+      "Building and improving production internal platforms for campaign operations, creator workflows and business automation. Owned major frontend areas of BO2 using React + TypeScript, while contributing to UX design, Figma implementation, AI-assisted workflow initiatives, and cross-product improvements across BO2, Discovery and Omni.",
+    skills: [
+      "React",
+      "TypeScript",
+      "Frontend Architecture",
+      "UX/UI",
+      "Figma to Production",
+      "AI Workflow Automation",
+      "Internal Tools",
+      "API Integrations",
+      "Accessibility",
+      "Product Ownership",
+    ],
+    links: [],
+    featured: true,
+  },
   {
     timeline: "Sep 2024 — Dec 2024",
     currentPosition: "Full Stack Java Developer",
     place: "SALT - School of Applied Technology",
-    previousPositions: [""],
+    previousPositions: [],
     description:
-      "Successfully completed an intensive Full Stack Java Developer bootcamp, mastering technologies such as Java, Spring Boot, PostgreSQL, and RESTful APIs for backend development. Developed expertise in frontend technologies, including React, TypeScript, HTML, and CSS, to create dynamic and user-focused applications. Proficient in designing scalable architectures, implementing best practices, and building complete end-to-end solutions in agile environments.",
+      "Completed an intensive full stack program focused on Java, Spring Boot, PostgreSQL, REST APIs, and modern frontend delivery with React and TypeScript.",
     skills: [
       "Java",
       "Spring Boot",
       "PostgreSQL",
-      "RESTful APIs",
+      "REST APIs",
       "React",
       "TypeScript",
-      "HTML",
-      "CSS",
-      "Agile Development",
-      "Scalable Architectures",
-      "Team Collaboration",
-      "Testing & Debugging",
-    ],
-  },
-  {
-    timeline: "Oct 2022 — Jun 2024",
-    currentPosition: "Front End Developer",
-    place: "Coderhouse",
-    previousPositions: [""],
-    description:
-      "Completed comprehensive courses in frontend development, covering essential technologies such as HTML, CSS, JavaScript, and React. Gained expertise in building responsive web designs, implementing interactive user interfaces, and optimizing performance for seamless user experiences. Proficient in leveraging modern frameworks and tools to create visually appealing and functional web applications.",
-    skills: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React",
-      "Responsive Design",
-      "UI/UX Design",
-      "Performance Optimization",
-      "Problem-Solving",
-      "Testing & Debugging",
-      "Version Control (Git)",
       "Team Collaboration",
     ],
+    links: [],
+    featured: false,
   },
 ];
 
 export default function ExpCard() {
   return (
-    <section id="studies" className="scroll-mt-16 lg:mt-16">
+    <section id="experience" className="scroll-mt-16 lg:mt-16">
       <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-background/0 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
         <h2 className="text-sm font-bold uppercase tracking-widest lg:sr-only">
-          Studies
+          Professional Experience
         </h2>
       </div>
       <>
         {jobPositions.map((job, index) => (
           <Card
             key={index}
-            className="lg:p-6 mb-4 flex flex-col lg:flex-row w-full min-h-fit gap-0 lg:gap-5 border-transparent hover:border dark:lg:hover:border-t-blue-900 dark:lg:hover:bg-slate-800/50 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg lg:hover:bg-slate-100/50 lg:hover:border-t-blue-200"
+            className={`lg:p-6 mb-4 flex flex-col lg:flex-row w-full min-h-fit gap-0 lg:gap-5 border-transparent hover:border dark:lg:hover:border-t-blue-900 dark:lg:hover:bg-slate-800/50 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg lg:hover:bg-slate-100/50 lg:hover:border-t-blue-200 ${
+              job.featured
+                ? "border border-primary/20 bg-primary/5 dark:bg-primary/10"
+                : ""
+            }`}
           >
             <CardHeader className="h-full w-full p-0">
               <CardTitle className="text-base text-slate-400 whitespace-nowrap">
@@ -78,13 +81,17 @@ export default function ExpCard() {
             </CardHeader>
             <CardContent className="flex flex-col p-0">
               <p className="text-foreground font-bold">
-                {job.currentPosition} • {job.place}
+                {job.place
+                  ? `${job.currentPosition} • ${job.place}`
+                  : job.currentPosition}
               </p>
-              {job.previousPositions.map((position, index) => (
+              {job.previousPositions
+                .filter(Boolean)
+                .map((position, index) => (
                 <p key={index} className="text-slate-400 text-sm font-bold">
                   {position}
                 </p>
-              ))}
+                ))}
               <CardDescription className="py-3 text-muted-foreground">
                 {job.description}
               </CardDescription>
@@ -93,6 +100,19 @@ export default function ExpCard() {
                   <Badge key={index}>{skill}</Badge>
                 ))}
               </CardFooter>
+              {job.links.length > 0 && (
+                <CardFooter className="p-0 mt-4 flex flex-wrap gap-3">
+                  {job.links.map((link, linkIndex) => (
+                    <a
+                      key={linkIndex}
+                      href={link.url}
+                      className="inline-flex items-center text-sm text-primary hover:underline"
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </CardFooter>
+              )}
             </CardContent>
           </Card>
         ))}

@@ -13,14 +13,14 @@ type NavItem = {
 export default function Nav() {
   const activeSection = useActiveSection([
     "about",
-    "studies",
+    "experience",
     "projects",
     "contact",
   ]);
 
   const navItems: NavItem[] = [
     { name: "About", href: "#about" },
-    { name: "Studies", href: "#studies" },
+    { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
   ];
@@ -59,10 +59,10 @@ export default function Nav() {
           Hi, I&#39;m Pablo 👋
         </h1>
         <h2 className="text-xl lg:text-start">
-          Full Stack Developer
+          Fullstack Developer
         </h2>
         <p className="text-lg lg:text-start text-muted-foreground">
-        Bringing ideas to life through code and innovation.
+        Product-minded fullstack developer with strong frontend, UX/UI and AI automation focus.
         </p>
       </div>
       <nav className="lg:flex hidden">
