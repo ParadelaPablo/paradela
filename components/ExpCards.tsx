@@ -158,7 +158,7 @@ export default function ExpCard() {
       </>
       <div className="lg:px-12 mt-12 flex flex-col gap-4">
   <a
-    href="/am-resume-2024.pdf"
+    href="/CV-2026.pdf"
     target="_blank"
     rel="noopener noreferrer"
     className="inline-flex items-center font-medium leading-tight text-foreground group"
@@ -169,8 +169,8 @@ export default function ExpCard() {
     <MoveRight className="ml-1 inline-block h-5 w-5 shrink-0 -translate-y-px transition-transform group-hover:translate-x-2 group-focus-visible:translate-x-2 motion-reduce:transition-none" />
   </a>
   <a
-    href="/am-resume-2024.pdf"
-    download="Pablo_Paradela_CV.pdf"
+    href="/CV-2026.pdf"
+    download="CV-2026.pdf"
     className="inline-flex items-center font-medium leading-tight text-foreground group"
   >
     <span className="border-b border-transparent pb-px transition hover:border-primary motion-reduce:transition-none">
